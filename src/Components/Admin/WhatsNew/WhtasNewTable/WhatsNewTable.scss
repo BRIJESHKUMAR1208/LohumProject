@@ -1,0 +1,17 @@
+.header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-box-rgt p {
+    padding: 7px 48px;
+    background-color: blue;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 39px;
+    cursor: pointer;
+}
+.MuiDataGrid-root{
+    background-color: #fff;
+}

@@ -1,0 +1,517 @@
+// Here you can add other styles
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap');
+@font-face{
+    src: url('../../Assets/fonts/times-roman/OPTITimes-Roman.otf');
+    font-family: TimesRoman;
+  }
+  @font-face{
+    src: url('../../Assets/fonts/times-roman/OPTITimesRoman-Italic.otf');
+    font-family: TimesRoman-Italic;
+  }
+//   body {
+//     font-family: TimesRoman;
+//   }
+  a {
+    text-decoration: none;
+    color: #172c73;
+}
+.sidebar a {
+    text-decoration: none !important;
+}
+h2.logo-title{
+    font-family: "David Libre", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.sidebar-dark {
+    --cui-body-color: rgba(255, 255, 255, 0.87);
+    --cui-body-bg: #172C73 !important;
+    --cui-emphasis-color: #fff;
+    --cui-secondary-color: rgba(255, 255, 255, 0.6);
+    --cui-secondary-bg: #323a49;
+    --cui-tertiary-color: rgba(255, 255, 255, 0.38);
+    --cui-tertiary-bg: #2a303d;
+    --cui-border-color: #323a49;
+}
+.sidebar-nav .nav-link.active {
+    color: var(--cui-sidebar-nav-link-active-color);
+    background: #3D99F5 !important;
+}
+@media (hover: hover), (-ms-high-contrast: none){
+.sidebar-nav .nav-link:hover {
+    color: var(--cui-sidebar-nav-link-hover-color);
+    text-decoration: none;
+    background: #3d99f5 !important;
+}
+}
+.breadcrumb-cus {
+    background-color: #2BEBC8;
+}
+.breadcrumb-custom {
+    background-color: #172c73;
+}
+.breadcrumb-item.active {
+    color: rgb(192 192 192) !important;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    float: left;
+    padding-right: var(--cui-breadcrumb-item-padding-x);
+    color: rgb(248 248 249) !important;
+    content: var(--cui-breadcrumb-divider, "/");
+}
+li.breadcrumb-item a {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer {
+    background-color: #3d99f5;
+    color: #fff;
+}
+.footer a {
+    color: #f8d57e;
+}
+// search bar css start
+.search-bar {
+    background-color: #dfdfdf !important;
+}
+// Banner section css start
+.banner-main {
+    background-image: linear-gradient(to right, #172c73 0%, #3d99f5 100%);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 20px;
+}
+.banner-rgt img {
+    width: 150px;
+    padding: 15px;
+}
+.banner-main>.row {
+    align-items: center;
+}
+.banner-lft h6 {
+    font-weight: 500;
+    font-size: 30px;
+    font-family: 'David Libre';
+    color: #fff;
+    text-align: left;
+}
+
+.date-main {
+    background-color: #fff;
+    width: 300px;
+}
+span.small.ms-1 {
+    float: right;
+    color: #3d99f5;
+    font-weight: 700;
+}
+.zone-heading h3 {
+    background-color: #ccf0ff;
+    color: #282828;
+    padding: 5px 0px;
+    border-radius: 10px;
+}
+.sidebar-toggler {
+    margin-left: auto !important;
+}
+.sidebar-nav .nav-link {
+    grid-gap: 5px;
+    padding: 12px 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+ul.par-list {
+    padding: 0px;
+}
+ul.par-list li {
+    list-style-type: none;
+    line-height: 18px;
+}
+.inner-box {
+    margin: 20px;
+}
+.body {
+    // margin: 20px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f3f4f8;
+}
+.bg-blue {
+    background-color:#d0e9ff;
+    border-radius: 32px;
+}
+.box-main {
+    padding: 30px 40px;
+}
+.custom-tb {
+    background-color: #fff;
+    border: 0 solid transparent;
+    border-radius: 1.25rem;
+    box-shadow: 0 .3125rem .3125rem 0 rgba(82, 63, 105, .05);
+    transition: all .5s ease-in-out;
+}
+.switches-container {
+    margin-bottom: 12px;
+}
+.switches-container2 {
+    margin-bottom: 12px;
+}
+
+
+.main-chart {
+    position: relative;
+}
+.main-chart .openbtn {
+    position: absolute;
+    right: -18px;
+    top: 40%;
+    font-size: 35px;
+}
+.main-box{
+    position: relative;
+}
+
+.main-box .closebtn {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    transform: "translateY(-50%) translateX(1300%)";
+}
+
+.text-white {
+    color: #fff;
+}
+.sub-h {
+    text-decoration: none;
+}
+.view-btn {
+    text-align: right;
+}
+ul.par-list a {
+    color: #fff;
+    text-decoration: none;
+}
+ul.par-list a:hover {
+    color: yellow;
+}
+.export-btn {
+    text-align: right;
+    margin-top: 20px;
+}
+.toggle-main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 100%;
+}
+// .banner-wel {
+//     background-image: linear-gradient(to right, #172c73 0%, #3d99f5 100%);
+//     border-top-left-radius: 20px;
+//     border-bottom-left-radius: 20px;
+//     border-top-right-radius: 20px;
+//     border-bottom-right-radius: 20px;
+//     margin-bottom: 12px;
+//     margin-top: 12px;
+// }
+.banner-wel h6 {
+    // color: #fff;
+    // padding: 20px 40px;
+}
+.banner-wel h6 {
+    font-weight: 500;
+    font-size: 30px;
+    font-family: "David Libre";
+    color: #172c73;
+    text-align: left;
+}
+.toggle-rgt {
+    width: 100%;
+}
+.banner-wel h6 {
+    text-align: center;
+}
+.bg-box {
+    background-color: #8f64ea;
+}
+.bg-green1 {
+    background-color: #b8bf2d;
+}
+.card-white {
+    color: #fff;
+    background-color: #172c73;
+    padding: 12px;
+    border-radius: 8px;
+}
+.mid-sec p {
+    margin-bottom: 0px;
+}
+.ml-4 {
+    margin-left: 12px;
+}
+.g1 {
+    position: relative;
+}
+.box-img {
+    position: absolute;
+    bottom: 0px;
+}
+.box-img img {
+    width: 100%;
+}
+.g1-box {
+    z-index: 2;
+}
+.box-img.b3 {
+    left: 0px;
+}
+.b-4 {
+    position: absolute;
+    z-index: 2;
+}
+.table-responsive td {
+    text-align: center;
+}
+// .table-responsive th {
+//     text-align: center;
+//     background-color: #6892BA;
+// }
+.table-responsive th {
+    text-align: center;
+    background-color: #6892BA;
+    background-image: linear-gradient(to right, #005C97 0%, #363795 51%, #005C97 100%);
+    color: #fff;
+}
+body {
+    background-color: #ffffff !important;
+}
+button.btn-primary {
+    background-color: #1976d2;
+}
+button.btn-primary:hover {
+    background-color: #1976d2;
+}
+.pagination {
+    font-family: auto;
+}
+.css-1k51tf5-MuiTooltip-tooltip {
+    font-size: 0.9rem !important;
+}
+// .custom-sec h2 {
+//     font-size: 1.9rem;
+// }
+.custom-sec>.row {
+    align-items: center;
+}
+// .mid-sec p {
+//     text-align: center;
+//   }
+.mid-sec p {
+    font-size: 1.1rem;
+}
+.msg-box {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+.mid-sec {
+    margin-bottom: 20px;
+}
+.top-date-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+}
+.cgst-top-head {
+    // background-color: #ff8d8d;
+    background-color: #f1e4ff;
+}
+.cgst-top-head strong {
+    color: #000;
+}
+.cgst-btm-head{
+    // background-color: #12c2d0;
+        background-color: #f0ffe2;
+}
+.cgst-btm-head strong {
+    color: #000;
+}
+.cust-btn {
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
+    margin: 10px;
+    padding: 8px 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+}
+.btn-box {
+    text-align: right;
+}
+span.cust-btn a {
+    color: #fff;
+}
+.cust-btn:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+//   .header-bg {
+//     background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
+// }
+// .header-toggler {
+//     color:#fff;
+// }
+
+a.page-link {
+    cursor: pointer;
+}
+
+span.small.ms-1 {
+    cursor: pointer;
+}
+table td{
+    color: #5C6574 !important;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+}
+table td a{
+    color: #5C6574;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+}
+.date-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+}
+
+.lft-sec {
+    width: 300px;
+}
+
+.custom-tb {
+    position: relative;
+}
+.export-btn button {
+    position: absolute;
+    right: 25px;
+    // top: 2%;
+    border: none;
+}
+.main-sec {
+    margin-bottom: 20px;
+    padding: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+}
+// date calender css start
+.css-1rtg91x-MuiDateCalendar-root {
+    overflow: hidden;
+    width: 300px !important;
+    max-height: 200px !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 336px;
+}
+.css-bw88rr-MuiPickersMonth-monthButton {
+    color: unset;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+    margin: 0px 0 !important;
+    height: 32px !important;
+    width: 60px !important;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.css-bw88rr-MuiPickersMonth-monthButton.Mui-selected {
+    color: #fff;
+    background-image: linear-gradient(to right, #005C97 0%, #363795 51%, #005C97 100%) !important;
+}
+.css-innj4t-MuiPickersYear-yearButton.Mui-selected {
+    color: #fff;
+    background-image: linear-gradient(to right, #005C97 0%, #363795 51%, #005C97 100%) !important;
+}
+.zone-heading {
+    margin-bottom: 18px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.banner-wel h6 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    // -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // animation: textcolor 10s linear infinite;
+  }
+  @keyframes textcolor{
+      0%{background-image: linear-gradient(to right, red , yellow);}
+      10%{background-image: linear-gradient(to right, green , blue);}
+      20%{background-image: linear-gradient(to right, red , green);}
+      30% {background-image: linear-gradient(#E91E63, yellow, #FF5722);}
+      40%{background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);}
+      50%{background-image: repeating-linear-gradient(red, yellow 10%, green 20%);}
+      60%{background-image: radial-gradient(red, yellow, green);}
+      70%{background-image: radial-gradient(red 5%, yellow 15%, green 60%);}
+      80%{background-image: radial-gradient(circle, red, yellow, green);}
+      90%{background-image: repeating-radial-gradient(red, yellow 10%, green 15%);}
+      100%{background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));}
+  }
+
+  .card-body{
+    cursor: pointer;
+  }

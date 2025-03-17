@@ -1,0 +1,96 @@
+.dashboard {
+  .dashboard-container {
+    display: flex;
+    width: 100%;
+    margin-left: 50px;
+    gap: 20px; // Adds space between sidebar & main content
+  
+    .main {
+      flex-grow: 1;
+      padding: 20px;
+      transition: margin-left 0.3s ease, margin-right 0.3s ease;
+
+      @media (min-width: 1200px) {
+        margin-left: 250px; // Adjust based on sidebar width
+        margin-right: 20px;
+      }
+
+      @media (max-width: 1199px) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+.test {
+margin-right:20px;
+margin-left:20px;
+}
+  // Sidebar Styling
+  .sidebar {
+    width: 250px; // Fixed sidebar width
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding: 15px;
+    color: white;
+  }
+
+  // Card Styling
+  .card {
+    height: 230px; // Set a fixed height for consistency
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    background: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .cr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 190px;
+    border-radius: 10px;
+    background: #f8f9fa;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-body {
+    flex-grow: 1;
+    padding: 12px;
+  }
+
+  .col-md-3 {
+    margin-bottom: 20px; // Space between cards
+  }
+
+  // Card Background Colors
+  .c1 { background: #ffe0b2; }
+  .c2 { background: #c8e6c9; }
+  .c3 { background: #bbdefb; }
+  .c4 { background: #ffccbc; }
+  .c5 { background: #d1c4e9; }
+  .c6 { background: #f8bbd0; }
+  .c7 { background: #b2ebf2; }
+  .c8 { background: #cfd8dc; }
+
+  // Hero Image Styling
+  img.d-block.w-100.hero-img {
+    height: 200px;
+    object-fit: cover;
+  }
+}

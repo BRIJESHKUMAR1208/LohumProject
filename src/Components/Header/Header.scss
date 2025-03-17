@@ -1,0 +1,68 @@
+/* Ensure full-page height layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent full page scrolling */
+  }
+  
+  /* Wrapper to hold the entire structure */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height */
+  }
+  
+  /* Fixed Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;  /* Blue background */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  
+  /* Sidebar Styling (if needed) */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px; /* Below the header */
+    width: 250px; /* Adjust as needed */
+    height: calc(100vh - 120px); /* Full height minus header/footer */
+    background-color: #343a40;
+    color: white;
+    overflow-y: auto;
+    z-index: 999;
+  }
+  
+  /* Scrollable Main Content */
+  .main-content {
+    margin-top: 60px; /* Same as header height */
+    margin-bottom: 60px; /* Same as footer height */
+    margin-left: 250px; /* Adjust based on sidebar width */
+    height: calc(100vh - 120px); /* Full height minus header & footer */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 20px;
+    background: #f8f9fa; /* Light gray background */
+  }
+  
+  /* Fixed Footer */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust height */
+    background-color: #1976d2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  

@@ -1,0 +1,37 @@
+// .footer {
+//     position: fixed;
+//     bottom: 0;
+//     //left: 50px;
+//     width: 100%;
+//     background-color: #dd1e1e; /* Adjust background color if needed */
+//     color: white;
+//     //padding: 1rem 0; /* You can adjust padding */
+//   }
+  
+
+
+/* Ensure the page takes full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root container with flexbox layout */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Main content should expand to fill available space */
+.main-content {
+  flex: 1;
+}
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the viewport */
+    min-height: 100vh; 
+  }
