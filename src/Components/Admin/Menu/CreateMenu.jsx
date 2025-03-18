@@ -1,5 +1,3 @@
-// ISHA 4thFeb
-
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
@@ -48,8 +46,8 @@ const CreateMenu = () => {
   const [formData, setFormData] = useState({
     menuname: "",
     contenttype: "",
-    externallink: "",
-    internallink: "",
+    external_link: "",
+    internal_link: "",
     submenu_id: 0,
     file: "",
     html: "",
@@ -63,8 +61,8 @@ const CreateMenu = () => {
     setFormData({
       menuname: "",
       contenttype: "",
-      externallink: "",
-      internallink: "",
+      external_link: "",
+      internal_link: "",
       submenu_id: 0,
       file: "",
       html: "",
@@ -102,8 +100,8 @@ const CreateMenu = () => {
     }
 
     // Validate external link (only if contenttype is "4")
-    if (formData.contenttype === "4" && !formData.externallink) {
-      newErrors.externallink = "External Link is required";
+    if (formData.contenttype === "4" && !formData.external_link) {
+      newErrors.external_link = "External Link is required";
     }
 
     // Validate file (only if contenttype is "2")
@@ -118,50 +116,6 @@ const CreateMenu = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
-  // const validateForm = () => {
-  //   const newErrors = {};
-
-  //   // Validate menuname (only allow letters and spaces)
-  //   if (!formData.menuname) {
-  //     newErrors.menuname = "Please enter Name";
-  //   } else if (parseInt(formData.languagetype) === 1) {
-  //     if (!/^[A-Za-z\s]+$/.test(formData.menuname)) {
-  //       newErrors.menuname = "Please input alphabet characters only";
-  //     }
-  //   } else if (parseInt(formData.languagetype) === 2) {
-  //     if (!/^[\u0900-\u097F\s]+$/.test(formData.menuname)) {
-  //       newErrors.menuname = "कृपया केवल हिंदी शब्द ही इनपुट करें";
-  //     }
-  //   }
-
-  //   // Validate contenttype
-  //   if (!formData.contenttype) {
-  //     newErrors.contenttype = "Select a content type";
-  //   }
-
-  //   // Validate languagetype
-  //   if (!formData.languagetype) {
-  //     newErrors.languagetype = "Select a Language";
-  //   }
-
-  //   // Validate external link (only if contenttype is "4")
-  //   if (formData.contenttype === "4" && !formData.external_link) {
-  //     newErrors.external_link = "External Link is required";
-  //   }
-
-  //   // Validate file (only if contenttype is "2")
-  //   if (formData.contenttype === "2") {
-  //     if (!file) {
-  //       newErrors.file = "File is required";
-  //     } else if (file.type !== "application/pdf") {
-  //       newErrors.file = "Only PDF files are allowed";
-  //     }
-  //   }
-
-  //   setErrors(newErrors);
-  //   return Object.keys(newErrors).length === 0;
-  // };
 
   const handleImageChange = (event) => {
     const imageFile = event.target.files[0];
@@ -207,9 +161,9 @@ const CreateMenu = () => {
       formDataToSend.append("CreatedBy", "Neha");
       formDataToSend.append("usertype", usertype);
       if (formData.contenttype === "4") {
-        formDataToSend.append("externallink", formData.externallink);
+        formDataToSend.append("external_link", formData.external_link);
       } else if (formData.contenttype === "3") {
-        formDataToSend.append("internallink", formData.internallink);
+        formDataToSend.append("internal_link", formData.internal_link);
       } else if (formData.contenttype === "2") {
         formDataToSend.append("file", file);
       } else if (formData.contenttype === "1") {
@@ -225,8 +179,8 @@ const CreateMenu = () => {
         setFormData({
           menuname: "",
           contenttype: "",
-          externallink: "",
-          internallink: "",
+          external_link: "",
+          internal_link: "",
           submenu_id: 0,
           file: "",
           html: "",
@@ -368,13 +322,13 @@ const CreateMenu = () => {
                             className="form-control"
                             type="text"
                             placeholder="Enter External Link"
-                            name="externallink"
-                            value={formData.externallink}
+                            name="external_link"
+                            value={formData.external_link}
                             onChange={handleInputChange}
                           />
-                          {errors.externallink && (
+                          {errors.external_link && (
                             <div className="text-danger">
-                              {errors.externallink}
+                              {errors.external_link}
                             </div>
                           )}
                         </div>
@@ -385,8 +339,8 @@ const CreateMenu = () => {
                         <div className="mb-3">
                           <select
                             className="form-control"
-                            name="internallink"
-                            value={formData.internallink}
+                            name="internal_link"
+                            value={formData.internal_link}
                             onChange={handleInputChange}
                             //isInvalid={!!formErrors.internal_link}
                           >
@@ -402,9 +356,9 @@ const CreateMenu = () => {
                               </option>
                             ))}
                           </select>
-                          {errors.internallink && (
+                          {errors.internal_link && (
                             <div className="text-danger">
-                              {errors.internallink}
+                              {errors.internal_link}
                             </div>
                           )}
                         </div>

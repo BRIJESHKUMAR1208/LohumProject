@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-  baseURL: "https://localhost:7191",
+  baseURL: "https://localhost:7160",
 });
 
 axiosInstance.interceptors.request.use(
@@ -25,8 +25,8 @@ axiosInstance.interceptors.response.use(
   function (error) {
     if (error.response && error.response.status === 401) {
       localStorage.clear();
-     // window.location.reload("/"); // You might want to redirect to the login page
-     navigate("/"); // Redirect using React Router
+      // window.location.reload("/"); // You might want to redirect to the login page
+      navigate("/"); // Redirect using React Router
     }
     return Promise.reject(error);
   }

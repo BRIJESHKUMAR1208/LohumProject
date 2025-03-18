@@ -49,15 +49,9 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      debugger;
-      const response = await APIClient.post(
-        apis.getLogin,
-        //"https://localhost:7191/api/Login",
-        user,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = await APIClient.post(apis.getLogin, user, {
+        headers: { "Content-Type": "application/json" },
+      });
 
       if (response.status === 200) {
         let token = response.data[0].token;
