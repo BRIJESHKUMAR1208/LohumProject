@@ -20,7 +20,7 @@ import apis from "../../../API/API.json";
 import AddIcon from "@mui/icons-material/Add";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";      
 // import './WhatsNewTable.scss'
 
 function Approvallist() {
