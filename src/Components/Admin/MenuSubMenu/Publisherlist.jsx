@@ -36,15 +36,14 @@ function Publisherlist() {
   const columns = [
     { field: "id1", headerName: "S.No", width: 100 },
     { field: "menuname", headerName: "Title", width: 250 },
-    { field: "internal_link", headerName: "Internal Link", width: 120 },
-    { field: "external_link", headerName: "External Link", width: 120 },
+    // { field: "internallink", headerName: "Internal Link", width: 120 },
+    // { field: "externallink", headerName: "External Link", width: 120 },
     { field: "menuurl", headerName: "Menu Url", width: 250 },
     {
       field: "edit",
       headerName: "View Data",
       sortable: false,
       renderCell: (params) =>
-        //1 === 1 || null ? ( // Check the user role here
         usertype === 3 || usertype === 4 ? (
           <Link to={"/publishdataindex/" + params.row.id}>
             <EditIcon style={{ cursor: "pointer" }} />
@@ -89,6 +88,7 @@ function Publisherlist() {
   useEffect(() => {
     async function fetchData() {
       try {
+        debugger;
         const response = await APIClient.get(apis.publisherlist);
         const dataWithIds = response.data.map((row, index) => ({
           id1: index + 1,

@@ -36,15 +36,15 @@ function MenuSubMenu() {
   const columns = [
     { field: "id1", headerName: "S.No", width: 50 },
     { field: "menuname", headerName: "Title", width: 200 },
-    { field: "internal_link", headerName: "Internal Link", width: 120 },
-    { field: "external_link", headerName: "External Link", width: 120 },
+    // { field: "internal_link", headerName: "Internal Link", width: 120 },
+    // { field: "external_link", headerName: "External Link", width: 120 },
     { field: "menuurl", headerName: "Menu Url", width: 200 },
     {
       field: "edit",
       headerName: "Edit",
       sortable: false,
       renderCell: (params) =>
-        //1 == 1 || null ? (
+      
         usertype === 1 || usertype === 4 ? ( // Creator & Super Admin can edit
           <Link to={`/EditMenuSubmeu/IndexEdit/${params.row.id}`}>
             <EditIcon style={{ cursor: "pointer" }} />
