@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import { DataGrid, GridToolbar, GridToolbarContainer, GridToolbarExport, GridToolbarQuickFilter } from "@mui/x-data-grid";
+import {
+  DataGrid,
+  GridToolbar,
+  GridToolbarContainer,
+  GridToolbarExport,
+  GridToolbarQuickFilter,
+} from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -14,11 +20,10 @@ import MuiAlert from "@mui/material/Alert";
 import APIClient from "../../../API/APIClient";
 import apis from "../../../API/API.json";
 
-
 //  Move CustomToolbar function ABOVE UserTable
 const CustomToolbar = () => (
   <GridToolbarContainer>
-    <GridToolbarExport  sx={{ marginRight: "auto" }}/> {/*  Export button */}
+    <GridToolbarExport sx={{ marginRight: "auto" }} /> {/*  Export button */}
     <GridToolbarQuickFilter sx={{ marginLeft: "auto" }} /> {/*  Search bar */}
   </GridToolbarContainer>
 );
@@ -82,7 +87,7 @@ const UserTable = () => {
       console.error("Error deleting data:", error);
     } finally {
       setConfirmDialogOpen(false);
-    } 
+    }
   };
 
   useEffect(() => {
@@ -119,9 +124,9 @@ const UserTable = () => {
 
   return (
     <div className="row justify-content-center">
-    <div className="formdata">
-      
-        <nav>
+      <div className="formdata">
+        <main id="main" className="main">
+          <nav>
             <ol className="breadcrumb">
               <li className="breadcrumb-item">Home</li>
               <li className="breadcrumb-item">User</li>
@@ -129,69 +134,71 @@ const UserTable = () => {
             </ol>
           </nav>
           <h1>All Users</h1>
-          <div className="d-flex justify-content-left" >
-          <Link to="/dashboard">
-            <button type="button" className="btn btn-info">
-              Back
-            </button>
-          </Link>
+          <div className="d-flex justify-content-left">
+            <Link to="/dashboard">
+              <button type="button" className="btn btn-info">
+                Back
+              </button>
+            </Link>
           </div>
 
-         
           <div className="card-body">
-        <Box sx={{ height: 400, width: "100%", backgroundColor: "#fff" }}>
-          <DataGrid
-            rows={apiData}
-            columns={columns}
-            disableColumnFilter
-            disableColumnSelector
-            disableDensitySelector
-            slots={{
-                            toolbar: CustomToolbar, // Correct way to use the toolbar
-                          }}
-                          slotProps={{
-                            toolbar: {
-                              showQuickFilter: true,
-                              quickFilterProps: { debounceMs: 500 },
-                            },
-                          }}
-            componentsProps={{ toolbar: { showQuickFilter: true } }}
-          />
-        </Box>
-     </div>
-    
+            <Box sx={{ height: 400, width: "100%", backgroundColor: "#fff" }}>
+              <DataGrid
+                rows={apiData}
+                columns={columns}
+                disableColumnFilter
+                disableColumnSelector
+                disableDensitySelector
+                slots={{
+                  toolbar: CustomToolbar, // Correct way to use the toolbar
+                }}
+                slotProps={{
+                  toolbar: {
+                    showQuickFilter: true,
+                    quickFilterProps: { debounceMs: 500 },
+                  },
+                }}
+                componentsProps={{ toolbar: { showQuickFilter: true } }}
+              />
+            </Box>
+          </div>
 
-      {/* Confirm Delete Dialog */}
-      <Dialog
-        open={confirmDialogOpen}
-        onClose={() => setConfirmDialogOpen(false)}
-      >
-        <DialogTitle>Confirm Delete</DialogTitle>
-        <DialogContent>
-          Are you sure you want to delete this user?
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setConfirmDialogOpen(false)} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleConfirmSubmit} color="primary">
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
+          {/* Confirm Delete Dialog */}
+          <Dialog
+            open={confirmDialogOpen}
+            onClose={() => setConfirmDialogOpen(false)}
+          >
+            <DialogTitle>Confirm Delete</DialogTitle>
+            <DialogContent>
+              Are you sure you want to delete this user?
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={() => setConfirmDialogOpen(false)}
+                color="primary"
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleConfirmSubmit} color="primary">
+                Confirm
+              </Button>
+            </DialogActions>
+          </Dialog>
 
-      {/* Snackbar Notification */}
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={() => setSnackbarOpen(false)}
-      >
-        <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
-          {modalMessage}
-        </MuiAlert>
-      </Snackbar>
+          {/* Snackbar Notification */}
+          <Snackbar
+            open={snackbarOpen}
+            autoHideDuration={3000}
+            onClose={() => setSnackbarOpen(false)}
+          >
+            <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
+              {modalMessage}
+            </MuiAlert>
+          </Snackbar>
+        </main>
+      </div>
     </div>
-  </div>
   );
 };
 

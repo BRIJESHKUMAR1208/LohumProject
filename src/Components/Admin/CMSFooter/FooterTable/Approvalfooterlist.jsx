@@ -87,7 +87,7 @@ const ApproveFooterTable = () => {
       try {
         const response = await APIClient.get(apis.footerapprovallist);
         const dataWithIds = response.data.map((row, index) => ({
-          id1: index+1,
+          id1: index + 1,
           ...row,
         }));
         setApiData(dataWithIds);
@@ -101,80 +101,83 @@ const ApproveFooterTable = () => {
 
   return (
     <div className="row justify-content-center">
-    <div className="formdata">
-      <main id="main" className="main">
-        <div className="pagetitle">
-          <div className="pagetitle-lft">
-           
-            <nav>
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">Home</li>
-                <li className="breadcrumb-item">Footer</li>
-                <li className="breadcrumb-item active">Footer Approval List</li>
-              </ol>
-            </nav>
-            <h1> Footer Approval List</h1>
+      <div className="formdata">
+        <main id="main" className="main">
+          <div className="pagetitle">
+            <div className="pagetitle-lft">
+              <nav>
+                <ol className="breadcrumb">
+                  <li className="breadcrumb-item">Home</li>
+                  <li className="breadcrumb-item">Footer</li>
+                  <li className="breadcrumb-item active">
+                    Footer Approval List
+                  </li>
+                </ol>
+              </nav>
+              <h1> Footer Approval List</h1>
+            </div>
+            <div
+              className="d-flex justify-content-left"
+              style={{ marginLeft: "1px" }}
+            >
+              <Link to="/dashboard">
+                <button type="button" className="btn btn-info">
+                  Back
+                </button>
+              </Link>
+            </div>
           </div>
-          <div className="d-flex justify-content-left" style={{ marginLeft: "1px" }}>
-            <Link to="/dashboard">
-              <button type="button" className="btn btn-info">
-                Back
-              </button>
-            </Link>
-          </div>
-        </div>
-        <Box sx={{ height: 400, width: "100%" }}>
-          <DataGrid
-            rows={apiData}
-            columns={columns}
-            disableColumnFilter
-            disableColumnSelector
-            disableDensitySelector
-            slots={{
-                            toolbar: GridToolbar, // Correct way to use the toolbar
-                          }}
-                          slotProps={{
-                            toolbar: {
-                              showQuickFilter: true,
-                              quickFilterProps: { debounceMs: 500 },
-                            },
-                          }}
-            components={{
-              Toolbar: GridToolbar,
-            }}
-            componentsProps={{
-              toolbar: {
-                showQuickFilter: true,
-              },
-            }}
-          />
-        </Box>
-     
+          <Box sx={{ height: 400, width: "100%" }}>
+            <DataGrid
+              rows={apiData}
+              columns={columns}
+              disableColumnFilter
+              disableColumnSelector
+              disableDensitySelector
+              slots={{
+                toolbar: GridToolbar, // Correct way to use the toolbar
+              }}
+              slotProps={{
+                toolbar: {
+                  showQuickFilter: true,
+                  quickFilterProps: { debounceMs: 500 },
+                },
+              }}
+              components={{
+                Toolbar: GridToolbar,
+              }}
+              componentsProps={{
+                toolbar: {
+                  showQuickFilter: true,
+                },
+              }}
+            />
+          </Box>
 
-      <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
-        <DialogTitle>Confirm Delete</DialogTitle>
-        <DialogContent>
-          Are you sure you want to delete this data?
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseConfirmation} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleConfirmSubmit} color="primary">
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={() => setSnackbarOpen(false)}
-      >
-        <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
-          {modalMessage}
-        </MuiAlert>
-      </Snackbar>
-      </main>
+          <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
+            <DialogTitle>Confirm Delete</DialogTitle>
+            <DialogContent>
+              Are you sure you want to delete this data?
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleCloseConfirmation} color="primary">
+                Cancel
+              </Button>
+              <Button onClick={handleConfirmSubmit} color="primary">
+                Confirm
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <Snackbar
+            open={snackbarOpen}
+            autoHideDuration={3000}
+            onClose={() => setSnackbarOpen(false)}
+          >
+            <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
+              {modalMessage}
+            </MuiAlert>
+          </Snackbar>
+        </main>
       </div>
     </div>
   );

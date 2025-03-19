@@ -20,7 +20,7 @@ import apis from "../../../API/API.json";
 import AddIcon from "@mui/icons-material/Add";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";      
+import "react-toastify/dist/ReactToastify.css";
 // import './WhatsNewTable.scss'
 
 function Approvallist() {
@@ -32,20 +32,17 @@ function Approvallist() {
   const [modalMessage, setModalMessage] = useState("");
   const storedUserString = localStorage.getItem("usertype");
   const usertype = JSON.parse(storedUserString);
-  debugger;
+  //debugger;
   console.log("Usertype:", usertype);
   const columns = [
     { field: "id1", headerName: "S.No", width: 100 },
     { field: "menuname", headerName: "Title", width: 250 },
-    // { field: "externallink", headerName: "Internal Link", width: 120 },
-    // { field: "externallink", headerName: "External Link", width: 120 },
     { field: "menuurl", headerName: "Menu Url", width: 250 },
     {
       field: "edit",
       headerName: "View Data",
       sortable: false,
       renderCell: (params) =>
-        
         usertype === 2 || usertype === 4 ? (
           <Link to={"/approvaleditdata/" + params.row.id}>
             <EditIcon style={{ cursor: "pointer" }} />
@@ -111,24 +108,26 @@ function Approvallist() {
 
   return (
     <div className="row justify-content-center">
-       <div className="formdata">
-     
-            <nav>
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">Home</li>
-                <li className="breadcrumb-item">Service</li>
-                <li className="breadcrumb-item active">All Approval List</li>
-              </ol>
-            </nav>
-            <h1 className="maintitle">All Approval List</h1>
-          <div className="d-flex justify-content-left" style={{ marginLeft: "1px" }}>
-            <Link to="/dashboard">
-              <button type="button" className="btn btn-info">
-                Back
-              </button>
-            </Link>
-          </div>
-        
+      <div className="formdata">
+        <nav>
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">Home</li>
+            <li className="breadcrumb-item">Service</li>
+            <li className="breadcrumb-item active">All Approval List</li>
+          </ol>
+        </nav>
+        <h1 className="maintitle">All Approval List</h1>
+        <div
+          className="d-flex justify-content-left"
+          style={{ marginLeft: "1px" }}
+        >
+          <Link to="/dashboard">
+            <button type="button" className="btn btn-info">
+              Back
+            </button>
+          </Link>
+        </div>
+
         <div className="header-box"></div>
         <Box sx={{ height: 400, width: "100%" }}>
           <DataGrid
@@ -137,7 +136,6 @@ function Approvallist() {
             disableColumnFilter
             disableColumnSelector
             disableDensitySelector
-            
             slots={{
               toolbar: GridToolbar, // Correct way to use the toolbar
             }}
@@ -149,9 +147,8 @@ function Approvallist() {
             }}
           />
         </Box>
-      
 
-      <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
+        {/* <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
         <DialogTitle>Confirm Delete</DialogTitle>
         <DialogContent>
           Are you sure you want to delete this data?
@@ -164,18 +161,18 @@ function Approvallist() {
             Confirm
           </Button>
         </DialogActions>
-      </Dialog>
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={() => setSnackbarOpen(false)}
-      >
-        <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
-          {modalMessage}
-        </MuiAlert>
-      </Snackbar>
-      <ToastContainer />
-    </div>
+      </Dialog> */}
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={3000}
+          onClose={() => setSnackbarOpen(false)}
+        >
+          <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
+            {modalMessage}
+          </MuiAlert>
+        </Snackbar>
+        <ToastContainer />
+      </div>
     </div>
   );
 }

@@ -117,7 +117,7 @@ function MenuSubMenu() {
   return (
     <div className="row justify-content-center">
       <div className="formdata">
-
+      <main id="main" className="main">
         <nav>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Home</li>
@@ -204,6 +204,7 @@ function MenuSubMenu() {
           </MuiAlert>
         </Snackbar>
         <ToastContainer />
+      </main>
       </div>
     </div>
   );
