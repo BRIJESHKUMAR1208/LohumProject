@@ -111,7 +111,7 @@ import CourseApproveList from "../Components/Admin/Course/CourseApproveList";
 import CoursePublishList from "../Components/Admin/Course/CoursePublishList";
 import EditCourseApprove from "../Components/Admin/Course/EditCourseApprove";
 import EditCoursePublish from "../Components/Admin/Course/EditCoursePublish";
-
+import LogoSliderForm from "../Components/Admin/logoSlider/LogoSliderForm";
 
 function Router() {
   return (
@@ -318,6 +318,11 @@ function Router() {
       <Route path="/User/CreateUser" element={<CreateUser />} />
       <Route path="/User/UserTable" element={<UserTable />} />
       <Route path="/User/EditUser/:id" element={<EditUser />} />
+
+      {/* {Logo Slider} */}
+      <Route path="/logoSlider/LogoSliderForm" element={<LogoSliderForm />} />
+
+
     </Routes>
   );
 }

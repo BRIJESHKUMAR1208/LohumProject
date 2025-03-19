@@ -16,7 +16,7 @@ import MuiAlert from "@mui/material/Alert";
 import APIClient from "../../../API/APIClient";
 import apis from "../../../API/API.json";
 
-const BannerTable = () => {
+const LogoSliderTable = () => {
   const [apiData, setApiData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
@@ -65,9 +65,9 @@ const BannerTable = () => {
 
   const handleConfirmSubmit = async () => {
     try {
-      await APIClient.post("/api/Slider/delete/" + selectedItem.id);
+      await APIClient.post("/api/Logoslider/delete/" + selectedItem.id);
       setApiData((prevData) =>
-        prevData.filter((item) => item.u_id !== selectedItem.u_id)
+        prevData.filter((item) => item.id !== selectedItem.id)
       );
       setModalMessage("Data deleted successfully");
       setSnackbarOpen(true);
@@ -190,4 +190,4 @@ const BannerTable = () => {
   );
 };
 
-export default BannerTable;
+export default LogoSliderTable;

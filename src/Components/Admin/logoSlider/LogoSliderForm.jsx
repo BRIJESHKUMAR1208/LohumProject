@@ -1,7 +1,6 @@
 import { useState } from "react";
 //import axios from 'axios';
 import { Button, Box, IconButton, Paper, Grid, TextField } from "@mui/material";
-import { Delete as DeleteIcon } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import APIClient from "../../../API/APIClient";
@@ -9,7 +8,7 @@ import apis from "../../../API/API.json";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 
-const Banner = ({ id, onDelete }) => {
+const LogoSliderForm = ({ id, onDelete }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageName, setImageName] = useState("");
   const storedUserString = localStorage.getItem("usertype");
@@ -37,7 +36,7 @@ const Banner = ({ id, onDelete }) => {
     formData.append("content", imageName);
     formData.append("usertype", usertype);
     try {
-      const response = await APIClient.post(apis.postSlider, formData, {
+      const response = await APIClient.post(apis.postLogoSlider, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -108,7 +107,7 @@ const Banner = ({ id, onDelete }) => {
                   position: "relative",
                 }}
               >
-                <h1>Banner</h1>
+                <h1>Logo</h1>
                 {selectedImage && (
                   <Box
                     sx={{
@@ -184,4 +183,4 @@ const Banner = ({ id, onDelete }) => {
   );
 };
 
-export default Banner;
+export default LogoSliderForm;

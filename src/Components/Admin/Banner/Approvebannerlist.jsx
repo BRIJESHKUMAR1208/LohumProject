@@ -95,72 +95,79 @@ const ApprovalbannerList = () => {
 
   return (
     <>
-        <div className="row justify-content-center">
-        <div className="formdata">           
-                <nav>
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">Home</li>
-                    <li className="breadcrumb-item">Banner</li>
-                    <li className="breadcrumb-item active">Banner Table </li>
-                  </ol>
-                </nav>
-                <h1 className="maintitle">Banner Table</h1>
-             
-       
-      <Box sx={{ height: 400, width: "100%" }}>
-        <DataGrid
-          rows={apiData}
-          columns={columns}
-          disableColumnFilter
-          disableColumnSelector
-          disableDensitySelector
-          slots={{
-            toolbar: GridToolbar, // Correct way to use the toolbar
-          }}
-          slotProps={{
-            toolbar: {
-              showQuickFilter: true,
-              quickFilterProps: { debounceMs: 500 },
-            },
-          }}
-          components={{
-            Toolbar: GridToolbar,
-          }}
-          componentsProps={{
-            toolbar: {
-              showQuickFilter: true,
-            },
-          }}
-        />
-      </Box>
-      <Dialog
-        open={confirmDialogOpen}
-        onClose={() => setConfirmDialogOpen(false)}
-      >
-        <DialogTitle>Confirm Delete</DialogTitle>
-        <DialogContent>
-          Are you sure you want to delete this data?
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setConfirmDialogOpen(false)} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleConfirmSubmit} color="primary">
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={() => setSnackbarOpen(false)}
-      >
-        <MuiAlert severity="success" onClose={() => setSnackbarOpen(false)}>
-          {modalMessage}
-        </MuiAlert>
-      </Snackbar>
-      <ToastContainer />
-      </div>
+      <div className="row justify-content-center">
+        <div className="formdata">
+          <main id="main" className="main">
+            <nav>
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">Home</li>
+                <li className="breadcrumb-item">Banner</li>
+                <li className="breadcrumb-item active">Banner Table </li>
+              </ol>
+            </nav>
+            <h1 className="maintitle">Banner Table</h1>
+
+            <Box sx={{ height: 400, width: "100%" }}>
+              <DataGrid
+                rows={apiData}
+                columns={columns}
+                disableColumnFilter
+                disableColumnSelector
+                disableDensitySelector
+                slots={{
+                  toolbar: GridToolbar, // Correct way to use the toolbar
+                }}
+                slotProps={{
+                  toolbar: {
+                    showQuickFilter: true,
+                    quickFilterProps: { debounceMs: 500 },
+                  },
+                }}
+                components={{
+                  Toolbar: GridToolbar,
+                }}
+                componentsProps={{
+                  toolbar: {
+                    showQuickFilter: true,
+                  },
+                }}
+              />
+            </Box>
+            <DialogTitle
+              open={confirmDialogOpen}
+              onClose={() => setConfirmDialogOpen(false)}
+            >
+              <DialogTitle>Confirm Delete</DialogTitle>
+              <DialogContent>
+                Are you sure you want to delete this data?
+              </DialogContent>
+              <DialogActions>
+                <Button
+                  onClick={() => setConfirmDialogOpen(false)}
+                  color="primary"
+                >
+                  Cancel
+                </Button>
+                <Button onClick={handleConfirmSubmit} color="primary">
+                  Confirm
+                </Button>
+              </DialogActions>
+            </DialogTitle>
+            <Snackbar
+              open={snackbarOpen}
+              autoHideDuration={3000}
+              onClose={() => setSnackbarOpen(false)}
+            >
+              <MuiAlert
+                severity="success"
+                onClose={() => setSnackbarOpen(false)}
+              >
+                {modalMessage}
+              </MuiAlert>
+            </Snackbar>
+            <ToastContainer />
+          </main>
+        </div>
       </div>
     </>
   );

@@ -88,5 +88,7 @@
   "getallHostels": "/api/Hostal/allhostallist",
   "getHostels": "/api/Hostal/hostalreallist",
   "roomapprovallist": "/api/Room/approvallist",
-  "roompublisherlist": "/api/Room/publisherlist"
+  "roompublisherlist": "/api/Room/publisherlist",
+  "updateSlider": "/api/Slider/updateslider/",
+  "postLogoSlider": "/api/Logoslider/postslider"
 }

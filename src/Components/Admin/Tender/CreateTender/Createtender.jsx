@@ -199,7 +199,7 @@ const CreateTender = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        });
+        }); 
         // console.log('Data saved:', response.data);
         setFormData({
           tender_tittle: "",

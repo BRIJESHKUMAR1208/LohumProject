@@ -21,7 +21,6 @@ const Publishbanner = () => {
   });
   const storedUserString = localStorage.getItem("usertype");
   const usertype = JSON.parse(storedUserString);
-  
 
   useEffect(() => {
     async function fetchData() {
@@ -98,104 +97,104 @@ const Publishbanner = () => {
 
   return (
     <div className="row justify-content-center">
-    <div className="formdata">           
-            <nav>
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">Home</li>
-                <li className="breadcrumb-item">Banner</li>
-                <li className="breadcrumb-item active">Banner Table </li>
-              </ol>
-            </nav>
-      <form>
-        <Paper
-          elevation={15}
-          sx={{
-            padding: 8,
-            maxWidth: "1200px",
-            margin: "auto",
-            position: "relative",
-          }}
-        >
-          <h1>{id ? "Publish Banner Data" : "Publish Banner Data"}</h1>
-
-          {/* Show existing or newly selected image */}
-          {(selectedImage || formData.imgpath) && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginBottom: 2,
-              }}
-            >
-              <img
-                width="100"
-                height="100"
-                style={{
-                  maxWidth: "100px",
-                  maxHeight: "100px",
-                  objectFit: "cover",
-                }}
-                src={
-                  selectedImage
-                    ? URL.createObjectURL(selectedImage)
-                    : `${APIClient.defaults.baseURL}${formData.imgpath}`
-                }
-                alt="Preview"
-              />
-            </Box>
-          )}
-
-          <input
-            type="file"
-            onChange={handleImageChange}
-            style={{ display: "none" }}
-            id="upload-input"
-          />
-          <label htmlFor="upload-input">
-            <Button variant="outlined" component="span">
-              <AddPhotoAlternateIcon />
-              Choose File
-            </Button>
-          </label>
-
-          {/* Text field for content */}
-          <TextField
-            label="Add Content"
-            value={formData.content}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, content: e.target.value }))
-            }
-            fullWidth
-            sx={{ marginTop: 5 }}
-            required
-          />
-
-          {/* Upload or update button */}
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleUpload}
-            sx={{ marginTop: 2 }}
+      <div className="formdata">
+        <nav>
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">Home</li>
+            <li className="breadcrumb-item">Banner</li>
+            <li className="breadcrumb-item active">Banner Table </li>
+          </ol>
+        </nav>
+        <form>
+          <Paper
+            elevation={15}
+            sx={{
+              padding: 8,
+              maxWidth: "1200px",
+              margin: "auto",
+              position: "relative",
+            }}
           >
-            <UploadFileIcon />
-            {id ? "Publish Banner" : "Publish Banner"}
-          </Button>
+            <h1>{id ? "Publish Banner Data" : "Publish Banner Data"}</h1>
 
-          {id && (
-            <IconButton
-              onClick={() =>
-                console.log("Delete function needs implementation")
+            {/* Show existing or newly selected image */}
+            {(selectedImage || formData.imgpath) && (
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: 2,
+                }}
+              >
+                <img
+                  width="100"
+                  height="100"
+                  style={{
+                    maxWidth: "100px",
+                    maxHeight: "100px",
+                    objectFit: "cover",
+                  }}
+                  src={
+                    selectedImage
+                      ? URL.createObjectURL(selectedImage)
+                      : `${APIClient.defaults.baseURL}${formData.imgpath}`
+                  }
+                  alt="Preview"
+                />
+              </Box>
+            )}
+
+            <input
+              type="file"
+              onChange={handleImageChange}
+              style={{ display: "none" }}
+              id="upload-input"
+            />
+            <label htmlFor="upload-input">
+              <Button variant="outlined" component="span">
+                <AddPhotoAlternateIcon />
+                Choose File
+              </Button>
+            </label>
+
+            {/* Text field for content */}
+            <TextField
+              label="Add Content"
+              value={formData.content}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, content: e.target.value }))
               }
-              sx={{ position: "absolute", top: 5, right: 5 }}
-            >
-              {/* <DeleteIcon /> */}
-            </IconButton>
-          )}
+              fullWidth
+              sx={{ marginTop: 5 }}
+              required
+            />
 
-          <ToastContainer />
-        </Paper>
-      </form>
-    </div>
+            {/* Upload or update button */}
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleUpload}
+              sx={{ marginTop: 2 }}
+            >
+              <UploadFileIcon />
+              {id ? "Publish Banner" : "Publish Banner"}
+            </Button>
+
+            {id && (
+              <IconButton
+                onClick={() =>
+                  console.log("Delete function needs implementation")
+                }
+                sx={{ position: "absolute", top: 5, right: 5 }}
+              >
+                {/* <DeleteIcon /> */}
+              </IconButton>
+            )}
+
+            <ToastContainer />
+          </Paper>
+        </form>
+      </div>
     </div>
   );
 };
