@@ -112,6 +112,11 @@ import CoursePublishList from "../Components/Admin/Course/CoursePublishList";
 import EditCourseApprove from "../Components/Admin/Course/EditCourseApprove";
 import EditCoursePublish from "../Components/Admin/Course/EditCoursePublish";
 import LogoSliderForm from "../Components/Admin/logoSlider/LogoSliderForm";
+import LogoSliderTable from "../Components/Admin/logoSlider/LogoSliderTable";
+import ApproveList from "../Components/Admin/logoSlider/ApproveList";
+import PublishList from "../Components/Admin/logoSlider/PublishList";
+import EditApproveLogo from "../Components/Admin/logoSlider/EditApproveLogo";
+import EditPushlishLogo from "../Components/Admin/logoSlider/EditPublishLogo";
 
 function Router() {
   return (
@@ -144,8 +149,14 @@ function Router() {
       <Route path="/Banner/Banner" element={<Banner />} />
       <Route path="/Course/AllCourse" element={<AllCourses />} />
       <Route path="/Course/CourseApproveList" element={<CourseApproveList />} />
-      <Route path="/Course/EditCourseApprove/:id" element={<EditCourseApprove />} />
-      <Route path="/Course/EditCoursePublish/:id" element={<EditCoursePublish />} />
+      <Route
+        path="/Course/EditCourseApprove/:id"
+        element={<EditCourseApprove />}
+      />
+      <Route
+        path="/Course/EditCoursePublish/:id"
+        element={<EditCoursePublish />}
+      />
       <Route
         path="/Course/CoursePublisherList"
         element={<CoursePublishList />}
@@ -204,11 +215,19 @@ function Router() {
       <Route path="/bannerdata" element={<BannerTable />} />
       <Route path="/Candidate/AllCandidates" element={<AllCandidates />} />
       <Route path="/Candidate/EditCandidate/:id" element={<EditCandidate />} />
-      <Route path = "/Approvalcandidatelist" element={<Approvalcandidatelist />} />
-      <Route path = "/Candidate/ApprovalEditCandidate/:id" element={<ApprovalEditCandidate />} />
-      <Route path = "/Publishcandidatelist" element={<Publishcandidatelist />} />
-      <Route path = "/Candidate/PublisherEditCandidate/:id" element={<PublisherEditCandidate />} />
-      
+      <Route
+        path="/Approvalcandidatelist"
+        element={<Approvalcandidatelist />}
+      />
+      <Route
+        path="/Candidate/ApprovalEditCandidate/:id"
+        element={<ApprovalEditCandidate />}
+      />
+      <Route path="/Publishcandidatelist" element={<Publishcandidatelist />} />
+      <Route
+        path="/Candidate/PublisherEditCandidate/:id"
+        element={<PublisherEditCandidate />}
+      />
 
       <Route path="/Hostel/CreateHostel" element={<CreateHostel />} />
       <Route path="/Hostel/AllHostel" element={<AllHostel />} />
@@ -321,8 +340,17 @@ function Router() {
 
       {/* {Logo Slider} */}
       <Route path="/logoSlider/LogoSliderForm" element={<LogoSliderForm />} />
-
-
+      <Route path="/logoSlider/LogoSliderTable" element={<LogoSliderTable />} />
+      <Route path="/logoSlider/ApproveList" element={<ApproveList />} />
+      <Route path="/logoSlider/PublishList" element={<PublishList />} />
+      <Route
+        path="/logoSlider/EditApproveLogo/:id"
+        element={<EditApproveLogo />}
+      />
+      <Route
+        path="/logoSlider/EditPublishLogo/:id"
+        element={<EditPushlishLogo />}
+      />
     </Routes>
   );
 }

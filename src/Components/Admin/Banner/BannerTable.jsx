@@ -67,7 +67,7 @@ const BannerTable = () => {
     try {
       await APIClient.post("/api/Slider/delete/" + selectedItem.id);
       setApiData((prevData) =>
-        prevData.filter((item) => item.u_id !== selectedItem.u_id)
+        prevData.filter((item) => item.id !== selectedItem.id)
       );
       setModalMessage("Data deleted successfully");
       setSnackbarOpen(true);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Box, Paper, TextField, IconButton } from "@mui/material";
-import { Delete as DeleteIcon } from "@mui/icons-material";
+import { Delete as DeleteIcon, Edit } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import apis from "../../../API/API.json";
@@ -9,12 +9,12 @@ import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import APIClient from "../../../API/APIClient";
 
-const Publishbanner = () => {
+const EditApproveLogo = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
     content: "",
-    imgsrc: null,
+    imgsrc: "",
     imgpath: "",
     usertype: "",
     action: "", // Stores the existing image path
@@ -25,10 +25,10 @@ const Publishbanner = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await APIClient.get(`${apis.getSliderbyid}${id}`);
+        const response = await APIClient.get(`${apis.getlogoSliderbyid}${id}`);
         setFormData({
           content: response.data.content || "",
-          imgsrc: null, // Reset uploaded image
+          //imgsrc: null, // Reset uploaded image
           imgpath: response.data.imgpath || "", // Store existing image
         });
       } catch (error) {
@@ -54,9 +54,9 @@ const Publishbanner = () => {
 
       uploadData.append("content", formData.content);
       uploadData.append("usertype", usertype);
-      uploadData.append("action", "publish");
+      uploadData.append("action", "approve");
       const response = await APIClient.post(
-        `/api/Slider/updateslider/${id}`,
+        `${apis.EditLogo}${id}`,
         uploadData,
         {
           headers: {
@@ -65,7 +65,7 @@ const Publishbanner = () => {
         }
       );
 
-      toast.success("Publish banner  data successfully!");
+      toast.success("Approve banner Data successfully!");
 
       setFormData((prev) => ({
         ...prev,
@@ -101,10 +101,13 @@ const Publishbanner = () => {
         <nav>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Home</li>
-            <li className="breadcrumb-item">Banner</li>
-            <li className="breadcrumb-item active">Banner Table </li>
+            <li className="breadcrumb-item">Logo</li>
+            <li className="breadcrumb-item active">Approve Logo Data</li>
           </ol>
         </nav>
+        {/* <h1 className="maintitle">Banner Table</h1>
+         */}
+
         <form>
           <Paper
             elevation={15}
@@ -115,7 +118,7 @@ const Publishbanner = () => {
               position: "relative",
             }}
           >
-            <h1>{id ? "Publish Banner Data" : "Publish Banner Data"}</h1>
+            <h1>Approve Logo Data</h1>
 
             {/* Show existing or newly selected image */}
             {(selectedImage || formData.imgpath) && (
@@ -177,7 +180,7 @@ const Publishbanner = () => {
               sx={{ marginTop: 2 }}
             >
               <UploadFileIcon />
-              {id ? "Publish Banner" : "Publish Banner"}
+              {"Approve Logo"}
             </Button>
 
             {id && (
@@ -187,7 +190,7 @@ const Publishbanner = () => {
                 }
                 sx={{ position: "absolute", top: 5, right: 5 }}
               >
-                {/* <DeleteIcon /> */}
+                <DeleteIcon />
               </IconButton>
             )}
 
@@ -199,4 +202,4 @@ const Publishbanner = () => {
   );
 };
 
-export default Publishbanner;
+export default EditApproveLogo;

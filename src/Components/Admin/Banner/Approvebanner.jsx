@@ -48,10 +48,9 @@ const Approvebanner = () => {
 
       if (selectedImage) {
         uploadData.append("imgsrc", selectedImage);
-      } else {
+      }else if (formData.imgpath) {
         uploadData.append("imgpath", formData.imgpath);
       }
-
       uploadData.append("content", formData.content);
       uploadData.append("usertype", usertype);
       uploadData.append("action", "approve");

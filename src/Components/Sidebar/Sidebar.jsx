@@ -462,29 +462,29 @@ const Sidebar = ({ data }) => {
             )}
           </li> */}
 
-            {/* Dropdown: LogoSidebar */}
-           <li className="nav-item">
+          {/* Dropdown: LogoSidebar */}
+          <li className="nav-item">
             <button
               className="nav-link dropdown-toggle"
-              onClick={() => toggleDropdown("circular")}
+              onClick={() => toggleDropdown("logoSlider")}
             >
               <NotificationsActiveIcon /> Logo Slider
             </button>
-            {openDropdown === "Logo Slider" && (
+            {openDropdown === "logoSlider" && (
               <ul className="nav-dropdown">
                 <li>
-                  <Link to="/Circular/CircularForm" className="nav-link">
+                  <Link to="/logoSlider/LogoSliderForm" className="nav-link">
                     Logo Slider Form
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Circular/CircularTable" className="nav-link">
-                    Circular Table
+                  <Link to="/logoSlider/LogoSliderTable" className="nav-link">
+                    Logo Slider Table
                   </Link>
                 </li>
               </ul>
             )}
-          </li> 
+          </li>
         </ul>
 
         <div className="sidebar-footer border-top d-none d-md-flex">

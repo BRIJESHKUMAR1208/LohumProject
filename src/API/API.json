@@ -48,6 +48,7 @@
   "getbannerpublisherlist": "/api/Slider/publisher",
   "bannerapprovallist": "/api/Slider/approvallist",
   "getSliderbyid": "/api/Slider/",
+  "getlogoSliderbyid": "/api/Logoslider/",
   "deleteSlider": "/api/Slider/delete/",
   "editSubMenu1": "/api/Topmenu/put/",
   "whatsnew": "/api/Whatsnew",
@@ -90,5 +91,9 @@
   "roomapprovallist": "/api/Room/approvallist",
   "roompublisherlist": "/api/Room/publisherlist",
   "updateSlider": "/api/Slider/updateslider/",
-  "postLogoSlider": "/api/Logoslider/postslider"
+  "postLogoSlider": "/api/Logoslider/postslider",
+  "getLogoSlider": "/api/Logoslider",
+  "logoApproveList": "/api/Logoslider/approvallist",
+  "getpublishlist": "/api/Logoslider/publisher",
+  "EditLogo": "/api/Logoslider/updateslider/"
 }

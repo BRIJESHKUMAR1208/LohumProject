@@ -9,7 +9,7 @@ import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import APIClient from "../../../API/APIClient";
 
-const Publishbanner = () => {
+const EditPushlishLogo = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const Publishbanner = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await APIClient.get(`${apis.getSliderbyid}${id}`);
+        const response = await APIClient.get(`${apis.getlogoSliderbyid}${id}`);
         setFormData({
           content: response.data.content || "",
           imgsrc: null, // Reset uploaded image
@@ -55,15 +55,11 @@ const Publishbanner = () => {
       uploadData.append("content", formData.content);
       uploadData.append("usertype", usertype);
       uploadData.append("action", "publish");
-      const response = await APIClient.post(
-        `/api/Slider/updateslider/${id}`,
-        uploadData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await APIClient.post(`${apis.EditLogo}${id}`, uploadData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       toast.success("Publish banner  data successfully!");
 
@@ -101,8 +97,8 @@ const Publishbanner = () => {
         <nav>
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Home</li>
-            <li className="breadcrumb-item">Banner</li>
-            <li className="breadcrumb-item active">Banner Table </li>
+            <li className="breadcrumb-item">Logo</li>
+            <li className="breadcrumb-item active">Edit Publish Logo</li>
           </ol>
         </nav>
         <form>
@@ -199,4 +195,4 @@ const Publishbanner = () => {
   );
 };
 
-export default Publishbanner;
+export default EditPushlishLogo;

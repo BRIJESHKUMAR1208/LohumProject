@@ -82,7 +82,7 @@ const LogoSliderTable = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await APIClient.get(apis.getSlider);
+        const response = await APIClient.get(apis.getLogoSlider);
         const dataWithIds = response.data.map((row, index) => ({
           id1: index + 1,
           ...row,
@@ -102,11 +102,11 @@ const LogoSliderTable = () => {
           <nav>
             <ol className="breadcrumb">
               <li className="breadcrumb-item">Home</li>
-              <li className="breadcrumb-item">Banner</li>
-              <li className="breadcrumb-item active">Banner Table </li>
+              <li className="breadcrumb-item">Logo</li>
+              <li className="breadcrumb-item active">Logoslider Table </li>
             </ol>
           </nav>
-          <h1 className="maintitle">Banner Table</h1>
+          <h1 className="maintitle">Logo Table</h1>
 
           <Box
             sx={{ display: "flex", justifyContent: "flex-end", gap: 2, mb: 2 }}
@@ -115,17 +115,17 @@ const LogoSliderTable = () => {
               variant="contained"
               color="primary"
               component={Link}
-              to="/bannerapprovallist"
+              to="/logoSlider/ApproveList"
             >
-              Banner Approval List
+              Logo Approval List
             </Button>
             <Button
               variant="contained"
               color="secondary"
               component={Link}
-              to="/bannerpublisherlist"
+              to="/logoSlider/PublishList"
             >
-              Banner Publisher List
+              Logo Publisher List
             </Button>
           </Box>
           <Box sx={{ height: 400, width: "100%" }}>

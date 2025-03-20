@@ -56,26 +56,26 @@ const ApprovalbannerList = () => {
     },
   ];
 
-  const handleDeleteClick = (item) => {
-    setSelectedItem(item);
-    setConfirmDialogOpen(true);
-  };
+  // const handleDeleteClick = (item) => {
+  //   setSelectedItem(item);
+  //   setConfirmDialogOpen(true);
+  // };
 
-  const handleConfirmSubmit = async () => {
-    try {
-      await APIClient.post("/api/Slider/delete/" + selectedItem.u_id);
-      setApiData((prevData) =>
-        prevData.filter((item) => item.u_id !== selectedItem.u_id)
-      );
-      setModalMessage("Data deleted successfully");
-      setSnackbarOpen(true);
-    } catch (error) {
-      toast.error("Something Went Wrong!");
-      console.error("Error deleting data:", error);
-    } finally {
-      setConfirmDialogOpen(false);
-    }
-  };
+  // const handleConfirmSubmit = async () => {
+  //   try {
+  //     await APIClient.post("/api/Slider/delete/" + selectedItem.id);
+  //     setApiData((prevData) =>
+  //       prevData.filter((item) => item.id !== selectedItem.id)
+  //     );
+  //     setModalMessage("Data deleted successfully");
+  //     setSnackbarOpen(true);
+  //   } catch (error) {
+  //     toast.error("Something Went Wrong!");
+  //     console.error("Error deleting data:", error);
+  //   } finally {
+  //     setConfirmDialogOpen(false);
+  //   }
+  // };
 
   useEffect(() => {
     async function fetchData() {
@@ -133,7 +133,7 @@ const ApprovalbannerList = () => {
                 }}
               />
             </Box>
-            <DialogTitle
+            {/* <DialogTitle
               open={confirmDialogOpen}
               onClose={() => setConfirmDialogOpen(false)}
             >
@@ -152,7 +152,7 @@ const ApprovalbannerList = () => {
                   Confirm
                 </Button>
               </DialogActions>
-            </DialogTitle>
+            </DialogTitle> */}
             <Snackbar
               open={snackbarOpen}
               autoHideDuration={3000}
