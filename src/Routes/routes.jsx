@@ -117,6 +117,9 @@ import ApproveList from "../Components/Admin/logoSlider/ApproveList";
 import PublishList from "../Components/Admin/logoSlider/PublishList";
 import EditApproveLogo from "../Components/Admin/logoSlider/EditApproveLogo";
 import EditPushlishLogo from "../Components/Admin/logoSlider/EditPublishLogo";
+import VisionMission from "../Components/Admin/visionmission/vision-mission";
+
+
 
 function Router() {
   return (
@@ -351,6 +354,7 @@ function Router() {
         path="/logoSlider/EditPublishLogo/:id"
         element={<EditPushlishLogo />}
       />
+      <Route path="/vision-mission" element={<VisionMission />} />
     </Routes>
   );
 }

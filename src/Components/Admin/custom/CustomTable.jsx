@@ -115,104 +115,127 @@ const CustomTable = () => {
   }, []);
 
   return (
-    <div className="row justify-content-center">
-    <div className="formdata">
-        <div className="pagetitle">
-         
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">Home</li>
-              <li className="breadcrumb-item">Custom</li>
-              <li className="breadcrumb-item active">Custom Table </li>
-            </ol>
-          </nav>
-          <h2 className="maintitle">Custom Table</h2>
-        </div>
-     
-        <Box sx={{ height: 400, width: "100%", backgroundColor: "white" }}>
-        <div className="d-flex justify-content-left" style={{ marginLeft: "1px" }}>
-            <Link to="/custom/custom">
-              <button
-                type="button"
-                className="btn btn-info"
-                style={{
-                  color: "white",
-                  backgroundColor: "blue",
-                  marginRight: 10,
-                }}
-              >
-                Add New
-              </button>
-            </Link>
-            <Link to="/custom/custom">
-              <button
-                type="button"
-                className="btn btn-info"
-                style={{ color: "white", backgroundColor: "blue", width: 90 }}
-              >
-                Back
-              </button>
-            </Link>
-           
-            <Link to="/customapproval">
-              <button type="button" className="btn btn-primary" style={{ color: "white", backgroundColor: "blue",marginLeft: "10px" }}>
-                approval list
-              </button>
-            </Link>
-            <Link to="/custompublisher">
-              <button type="button" className="btn btn-primary" style={{ color: "white", backgroundColor: "blue",marginLeft: "10px" }}>
-               publisher  list
-              </button>
-            </Link> 
+    <main id="main" className="main">
+      <div className="row justify-content-center">
+        <div className="formdata">
+          <div className="pagetitle">
+            <nav>
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">Home</li>
+                <li className="breadcrumb-item">Custom</li>
+                <li className="breadcrumb-item active">Custom Table </li>
+              </ol>
+            </nav>
+            <h2 className="maintitle">Custom Table</h2>
           </div>
-          <DataGrid
-            rows={apiData}
-            columns={columns}
-            disableColumnFilter
-            disableColumnSelector
-            disableDensitySelector
-            slots={{
-                            toolbar: GridToolbar, // Correct way to use the toolbar
-                          }}
-                          slotProps={{
-                            toolbar: {
-                              showQuickFilter: true,
-                              quickFilterProps: { debounceMs: 500 },
-                            },
-                          }}
-          />
-        </Box>
-     
-      <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
-        <DialogTitle>Confirm Delete</DialogTitle>
-        <DialogContent>
-          Are you sure you want to delete this data?
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseConfirmation} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleConfirmSubmit} color="primary">
-            Confirm
-          </Button>
-        </DialogActions>
-      </Dialog>
-      <Dialog
-        open={successDialogOpen}
-        onClose={() => setSuccessDialogOpen(false)}
-      >
-        <DialogTitle>Success</DialogTitle>
-        <DialogContent>
-          <Alert severity="success">Data deleted successfully!</Alert>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setSuccessDialogOpen(false)} color="primary">
-            OK
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-    </div>
+
+          <Box sx={{ height: 400, width: "100%", backgroundColor: "white" }}>
+            <div
+              className="d-flex justify-content-left"
+              style={{ marginLeft: "1px" }}
+            >
+              <Link to="/custom/custom">
+                <button
+                  type="button"
+                  className="btn btn-info"
+                  style={{
+                    color: "white",
+                    backgroundColor: "blue",
+                    marginRight: 10,
+                  }}
+                >
+                  Add New
+                </button>
+              </Link>
+              <Link to="/custom/custom">
+                <button
+                  type="button"
+                  className="btn btn-info"
+                  style={{ color: "white", backgroundColor: "blue", width: 90 }}
+                >
+                  Back
+                </button>
+              </Link>
+
+              <Link to="/customapproval">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  style={{
+                    color: "white",
+                    backgroundColor: "blue",
+                    marginLeft: "10px",
+                  }}
+                >
+                  approval list
+                </button>
+              </Link>
+              <Link to="/custompublisher">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  style={{
+                    color: "white",
+                    backgroundColor: "blue",
+                    marginLeft: "10px",
+                  }}
+                >
+                  publisher list
+                </button>
+              </Link>
+            </div>
+            <DataGrid
+              rows={apiData}
+              columns={columns}
+              disableColumnFilter
+              disableColumnSelector
+              disableDensitySelector
+              slots={{
+                toolbar: GridToolbar, // Correct way to use the toolbar
+              }}
+              slotProps={{
+                toolbar: {
+                  showQuickFilter: true,
+                  quickFilterProps: { debounceMs: 500 },
+                },
+              }}
+            />
+          </Box>
+
+          <Dialog open={confirmDialogOpen} onClose={handleCloseConfirmation}>
+            <DialogTitle>Confirm Delete</DialogTitle>
+            <DialogContent>
+              Are you sure you want to delete this data?
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleCloseConfirmation} color="primary">
+                Cancel
+              </Button>
+              <Button onClick={handleConfirmSubmit} color="primary">
+                Confirm
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <Dialog
+            open={successDialogOpen}
+            onClose={() => setSuccessDialogOpen(false)}
+          >
+            <DialogTitle>Success</DialogTitle>
+            <DialogContent>
+              <Alert severity="success">Data deleted successfully!</Alert>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={() => setSuccessDialogOpen(false)}
+                color="primary"
+              >
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+      </div>
+    </main>
   );
 };
 

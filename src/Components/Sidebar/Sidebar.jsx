@@ -193,29 +193,29 @@ const Sidebar = ({ data }) => {
             )}
           </li> */}
 
-          {/* Dropdown: Candidates */}
-          {/* <li className="nav-item">
+          {/* Dropdown: Vision-Mission */}
+          <li className="nav-item">
             <button
               className="nav-link dropdown-toggle"
-              onClick={() => toggleDropdown("candidate")}
+              onClick={() => toggleDropdown("Vision-Mission")}
             >
-              <PersonIcon /> Candidates
+              <PersonIcon /> Vision-Mission
             </button>
-            {openDropdown === "candidate" && (
+            {openDropdown === "Vision-Mission" && (
               <ul className="nav-dropdown">
                 <li>
-                  <Link to="/Candidate/CreateCandidate" className="nav-link">
-                    Create Candidate
+                  <Link to="/vision-mission" className="nav-link">
+                    Create Vision-Mission
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Candidate/AllCandidates" className="nav-link">
-                    Candidate List
+                  <Link to="/vision-mission" className="nav-link">
+                    Vision-Mission List
                   </Link>
                 </li>
               </ul>
             )}
-          </li> */}
+          </li>
 
           {/* Dropdown: Hostels */}
           {/* <li className="nav-item">
