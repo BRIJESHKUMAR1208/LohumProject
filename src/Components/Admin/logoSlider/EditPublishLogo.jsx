@@ -98,7 +98,7 @@ const EditPushlishLogo = () => {
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Home</li>
             <li className="breadcrumb-item">Logo</li>
-            <li className="breadcrumb-item active">Edit Publish Logo</li>
+            <li className="breadcrumb-item active"> Publish Logo Slider</li>
           </ol>
         </nav>
         <form>

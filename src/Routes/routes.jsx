@@ -347,8 +347,7 @@ function Router() {
       <Route path="/logoSlider/ApproveList" element={<ApproveList />} />
       <Route path="/logoSlider/PublishList" element={<PublishList />} />
       <Route
-        path="/logoSlider/EditApproveLogo/:id"
-        element={<EditApproveLogo />}
+        path="/logoSlider/EditApproveLogo/:id" element={<EditApproveLogo />}
       />
       <Route
         path="/logoSlider/EditPublishLogo/:id"

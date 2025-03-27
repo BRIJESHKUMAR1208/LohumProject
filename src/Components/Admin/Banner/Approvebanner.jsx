@@ -63,9 +63,15 @@ const Approvebanner = () => {
           },
         }
       );
-
+      
       toast.success("Approve banner Data successfully!");
-
+      setFormData({
+        content: "",
+      imgsrc: "",
+      imgpath: "",
+      usertype: "",
+      action: "",
+      });
       setFormData((prev) => ({
         ...prev,
         imgpath: response.data.imgpath || prev.imgpath, // Update only if a new image is uploaded

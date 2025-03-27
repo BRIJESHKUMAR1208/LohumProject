@@ -102,7 +102,7 @@ const EditApproveLogo = () => {
           <ol className="breadcrumb">
             <li className="breadcrumb-item">Home</li>
             <li className="breadcrumb-item">Logo</li>
-            <li className="breadcrumb-item active">Approve Logo Data</li>
+            <li className="breadcrumb-item active">Approve Logo Slider Data</li>
           </ol>
         </nav>
         {/* <h1 className="maintitle">Banner Table</h1>
@@ -118,7 +118,7 @@ const EditApproveLogo = () => {
               position: "relative",
             }}
           >
-            <h1>Approve Logo Data</h1>
+            <h1>Approve Logo Slider  Data</h1>
 
             {/* Show existing or newly selected image */}
             {(selectedImage || formData.imgpath) && (

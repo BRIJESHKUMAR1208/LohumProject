@@ -49,7 +49,13 @@ const Banner = ({ id, onDelete }) => {
       toast.success("Data uploaded successfully!", {
         position: toast.POSITION.TOP_CENTER,
       });
-
+      setFormData({
+        content: "",
+      imgsrc: "",
+      imgpath: "",
+      usertype: "",
+      action: "",
+      });
       // Clear the form fields and reset state after successful upload
       setSelectedImage(null);
       setImageName("");
