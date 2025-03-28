@@ -95,5 +95,16 @@
   "getLogoSlider": "/api/Logoslider",
   "logoApproveList": "/api/Logoslider/approvallist",
   "getpublishlist": "/api/Logoslider/publisher",
-  "EditLogo": "/api/Logoslider/updateslider/"
+  "EditLogo": "/api/Logoslider/updateslider/",
+  "createvisionmission": "/api/VisionMission",
+  "visionapprovallist": "/api/VisionMission/approvallist",
+  "getvisionbyid": "/api/VisionMission/",
+  "visionpublisherlist": "/api/VisionMission/publisherlist",
+  "visionlist": "/api/VisionMission",
+  "creategallery": "/api/Gallery/UploadGallery",
+  "gallerylist": "/api/Gallery/getlist",
+  "galleryapprovallist": "/api/Gallery/approvallist",
+  "getgallerybyid": "/api/Gallery/GetGallery",
+  "galleryapprovalupdate": "/api/Gallery/UpdateGallery",
+  "gallerypublisherlist": "/api/Gallery/publisherlist"
 }

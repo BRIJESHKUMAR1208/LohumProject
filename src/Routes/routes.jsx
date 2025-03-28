@@ -118,7 +118,19 @@ import PublishList from "../Components/Admin/logoSlider/PublishList";
 import EditApproveLogo from "../Components/Admin/logoSlider/EditApproveLogo";
 import EditPushlishLogo from "../Components/Admin/logoSlider/EditPublishLogo";
 import VisionMission from "../Components/Admin/visionmission/vision-mission";
-
+import VisionMissionList from "../Components/Admin/visionmission/visionmissionlist";
+import ApproveVisionmissionTable from "../Components/Admin/visionmission/Approvalvisionmission";
+import ApproveVisionData from "../Components/Admin/visionmission/ApproveVisionData";
+import PublisherVisionTable from "../Components/Admin/visionmission/PublisherVisionTable";
+import PublishEditVision from "../Components/Admin/visionmission/PublishEditVision";
+import EditVisionData from "../Components/Admin/visionmission/EditVisionData";
+import CreateGallery from "../Components/Admin/Gallery/CreateGallery";
+import GalleryList from "../Components/Admin/Gallery/GalleryList";
+import ApproveGallerytable from "../Components/Admin/Gallery/ApproveGallerytable";
+import ApproveGalleryData from "../Components/Admin/Gallery/ApproveGalleryData";
+import PublisherGalleryTable from "../Components/Admin/Gallery/PublisherGalleryTable";
+import PublisherGalleryEdit from "../Components/Admin/Gallery/PublisherGalleryEdit";
+import GalleryEdit from "../Components/Admin/Gallery/GalleryEdit";
 
 
 function Router() {
@@ -354,7 +366,22 @@ function Router() {
         path="/logoSlider/EditPublishLogo/:id"
         element={<EditPushlishLogo />}
       />
-      <Route path="/vision-mission" element={<VisionMission />} />
+      <Route path="/vision-mission" element={<VisionMission />} />  
+      <Route path="/VisionMissionList" element={<VisionMissionList />} />
+      <Route path="/ApproveVisionmissionTable" element={<ApproveVisionmissionTable />} />
+      <Route path="/ApproveVisionData/:id" element={<ApproveVisionData />} />
+      <Route path="/PublisherVisionTable" element={<PublisherVisionTable />} />
+      <Route path="/PublishEditVision/:id" element={<PublishEditVision />} />
+      <Route path="/EditVisionData/:id" element={<EditVisionData />} />
+       {/* {Gallery data} */}
+      <Route path="/CreateGallery" element={<CreateGallery />} />  
+      <Route path="/GalleryList" element={<GalleryList />} />
+      <Route path="/ApproveGallerytable" element={<ApproveGallerytable />} />
+      <Route path="/ApproveGalleryData/:id" element={<ApproveGalleryData />} />
+      <Route path="/PublisherGalleryTable" element={<PublisherGalleryTable />} />
+      <Route path="/PublisherGalleryEdit/:id" element={<PublisherGalleryEdit />} />
+      <Route path="/GalleryEdit/:id" element={<GalleryEdit />} />
+      
     </Routes>
   );
 }

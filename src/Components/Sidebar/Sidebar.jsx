@@ -209,7 +209,7 @@ const Sidebar = ({ data }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/vision-mission" className="nav-link">
+                  <Link to="/VisionMissionList" className="nav-link">
                     Vision-Mission List
                   </Link>
                 </li>
@@ -217,29 +217,31 @@ const Sidebar = ({ data }) => {
             )}
           </li>
 
-          {/* Dropdown: Hostels */}
-          {/* <li className="nav-item">
+
+           
+          {/* Dropdown: Gallery */}
+          <li className="nav-item">
             <button
               className="nav-link dropdown-toggle"
-              onClick={() => toggleDropdown("hostel")}
+              onClick={() => toggleDropdown("Gallery")}
             >
-              <HotelIcon /> Hostels
+              <HotelIcon /> Gallery
             </button>
-            {openDropdown === "hostel" && (
+            {openDropdown === "Gallery" && (
               <ul className="nav-dropdown">
                 <li>
-                  <Link to="/Hostel/CreateHostel" className="nav-link">
-                    Create Hostel
+                  <Link to="/createGallery" className="nav-link">
+                    Create Gallery
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Hostel/AllHostel" className="nav-link">
-                    Hostel List
+                  <Link to="/GalleryList" className="nav-link">
+                  Gallery List
                   </Link>
                 </li>
               </ul>
             )}
-          </li> */}
+          </li>
           {/* Dropdown: Rooms */}
           {/* <li className="nav-item">
             <button
