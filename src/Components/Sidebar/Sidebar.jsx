@@ -15,6 +15,7 @@ import PanoramaIcon from "@mui/icons-material/Panorama"; // Banner
 import AssignmentIcon from "@mui/icons-material/Assignment"; // Tenders
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive"; //Circulars
 import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // User
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const Sidebar = ({ data }) => {
   const [showhide, setShowHide] = useState("show");
@@ -199,7 +200,7 @@ const Sidebar = ({ data }) => {
               className="nav-link dropdown-toggle"
               onClick={() => toggleDropdown("Vision-Mission")}
             >
-              <PersonIcon /> Vision-Mission
+                <VisibilityIcon /> Vision-Mission
             </button>
             {openDropdown === "Vision-Mission" && (
               <ul className="nav-dropdown">
