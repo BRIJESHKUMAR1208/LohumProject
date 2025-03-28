@@ -6,6 +6,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment"; // Department
 import SchoolIcon from "@mui/icons-material/School"; // Courses
 import PersonIcon from "@mui/icons-material/Person"; // Candidates
 import HotelIcon from "@mui/icons-material/Hotel"; // Hostels
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary"; // Gallery
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom"; // Rooms
 import EventSeatIcon from "@mui/icons-material/EventSeat"; // Book Room
 import BuildIcon from "@mui/icons-material/Build"; // Custom
@@ -226,7 +227,7 @@ const Sidebar = ({ data }) => {
               className="nav-link dropdown-toggle"
               onClick={() => toggleDropdown("Gallery")}
             >
-              <HotelIcon /> Gallery
+              <PhotoLibraryIcon /> Gallery
             </button>
             {openDropdown === "Gallery" && (
               <ul className="nav-dropdown">
