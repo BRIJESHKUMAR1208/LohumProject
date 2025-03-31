@@ -413,7 +413,7 @@ const EditSubmenu = () => {
                     Select a role
                   </option>
                   {dropdownOptions.map((data) => (
-                    <option key={data.id} value={"/menu/" + data.menu_url}>
+                    <option key={data.id} value={"/menu/" + data.menuurl}>
                       {"Menu Name" + ":-" + data.menuname}
                     </option>
                   ))}
