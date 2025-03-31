@@ -265,7 +265,7 @@ const PublishEditVision = () => {
               Back
             </button>
           </Link>
-          <h1 className="flex-grow-1 text-center">Approve Footer Data </h1>
+          <h1 className="flex-grow-1 text-center">Approve Vision Data </h1>
         </div>
       </div>
 

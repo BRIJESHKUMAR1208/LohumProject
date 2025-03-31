@@ -36,6 +36,19 @@ const CreateUser = () => {
     });
   };
 
+
+  // Utility function for email validation
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+// Utility function for mobile number validation (10-digit)
+const isValidMobile = (mobile_no) => {
+  const mobileRegex = /^[6-9]\d{9}$/; // Starts with 6-9 and has 10 digits
+  return mobileRegex.test(mobile_no);
+};
+
   // Form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,6 +68,22 @@ const CreateUser = () => {
       return;
     }
 
+     // Validate email format
+  if (!isValidEmail(formData.email)) {
+    setFormErrors({ email: "Invalid email format" });
+    toast.error("Please enter a valid email");
+    setLoading(false);
+    return;
+  }
+
+  // Validate mobile number format
+  if (!isValidMobile(formData.mobile_no)) {
+    setFormErrors({ mobile_no: "Invalid mobile number format" });
+    toast.error("Please enter a valid 10-digit mobile number");
+    setLoading(false);
+    return;
+  }
+
     // Construct the payload
     const payload = {
       ...formData,
@@ -64,6 +93,7 @@ const CreateUser = () => {
     console.log("Submitting Data:", JSON.stringify(payload, null, 2)); // Debugging
 
     try {
+      debugger; 
       const response = await APIClient.post(apis.newuser, payload);
 
       if (response.status === 200) {

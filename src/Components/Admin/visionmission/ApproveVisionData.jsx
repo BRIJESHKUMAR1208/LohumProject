@@ -395,7 +395,7 @@ const ApproveVisionData = () => {
                 )}
 
                 {/* Input for File */}
-                {formData.contenttype === 2 && (
+                {parseInt(formData.contenttype) === 2 && (
                   <div className="mb-3">
                     <a
                       href={`${APIClient.defaults.baseURL}${formData.filepdfpath}`} // Ensure filepath is properly appended

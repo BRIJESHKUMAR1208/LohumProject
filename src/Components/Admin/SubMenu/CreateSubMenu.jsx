@@ -203,6 +203,7 @@ const CreateSubMenu = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
+        debugger;
         const response = await APIClient.get(apis.topMenu);
         Setdata(response.data);
       } catch (error) {
@@ -364,7 +365,7 @@ const CreateSubMenu = () => {
                           {data.map((data) => (
                             <option
                               key={data.id}
-                              value={"/menu/" + data.menu_url}
+                              value={"/menu/" + data.menuurl}
                             >
                               {"Menu Name" + ":-" + data.menuname}
                             </option>
